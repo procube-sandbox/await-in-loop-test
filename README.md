@@ -2,9 +2,9 @@
 
 このテストプログラムでは、eslint が [no-await-in-loop](https://eslint.org/docs/latest/rules/no-await-in-loop) で指摘するコードについて、どのような問題かを調査するため、ファイルの読み込みを同期的に順次実行した場合（指摘の対象となるコード）とPromise.all() を使って非同期に並列実行した場合の性能の比較する。
 
-## 非同期で実行
+## await を含むループで実行
 
-以下に 500 個のファイルを順次読み出すプログラムを示す。
+以下に 2000 個のファイルを順次読み出すプログラムを示す。
 
 ```typescript　{.line-numbers}
 async function testSync() {
@@ -48,7 +48,7 @@ async function testAsync() {
 
 ## 性能測定結果
 
-以下により、Promise.all() を使用した方が２倍以上性能が良いことがわかった。
+以下により、Promise.all() を使用した方が3倍以上性能が良いことがわかった。
 
 ```
 $ yarn start
