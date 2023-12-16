@@ -1,0 +1,62 @@
+module.exports = {
+    env: {
+        es2021: true,
+        node: true,
+    },
+    extends: [
+        "plugin:import/recommended",
+        "plugin:import/typescript",
+        "airbnb-base",
+        "airbnb-typescript/base",
+        "prettier",
+    ],
+    parser: "@typescript-eslint/parser",
+    parserOptions: {
+        ecmaVersion: "latest",
+        sourceType: "module",
+        project: ["./tsconfig.eslint.json"],
+        tsconfigRootDir: __dirname,
+    },
+    plugins: ["@typescript-eslint"],
+    rules: {
+        eqeqeq: ["error", "smart"],
+        "no-plusplus": "off",
+        "no-underscore-dangle": "off",
+        "import/prefer-default-export": "off",
+        "import/order": [
+            "error",
+            {
+                groups: [
+                    "builtin",
+                    "external",
+                    "internal",
+                    "parent",
+                    "sibling",
+                    "index",
+                    "object",
+                    "type",
+                ],
+                pathGroups: [
+                    {
+                        pattern: "@alias/**",
+                        group: "parent",
+                        position: "before",
+                    },
+                ],
+                alphabetize: {
+                    order: "asc",
+                },
+                "newlines-between": "always",
+            },
+        ],
+        "import/extensions": "off",
+    },
+    settings: {
+        "import/parsers": {
+            "@typescript-eslint/parser": [".ts", ".tsx"],
+        },
+        "import/resolver": {
+            typescript: { alwaysTryTypes: true },
+        },
+    },
+}

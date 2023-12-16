@@ -1,0 +1,35 @@
+{
+  "name": "await-in-loop-test",
+  "version": "1.0.0",
+  "description": "Promise.all() のテストを行う",
+  "main": "index.js",
+  "author": "Mitsuru Nakakawaji",
+  "license": "MIT",
+  "engines": {
+    "npm": "please-use-yarn",
+    "yarn": ">= 1.22",
+    "node": ">=18"
+  },
+  "type": "module",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "lint": "eslint index.ts",
+    "start": "yarn build && node index.js"
+  },
+  "private": false,
+  "devDependencies": {
+    "@tsconfig/node18": "^18.2.2",
+    "@types/node": "^20.10.4",
+    "@typescript-eslint/eslint-plugin": "^6.14.0",
+    "@typescript-eslint/parser": "^6.14.0",
+    "eslint": "^8.56.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-airbnb-typescript": "^17.1.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-import-resolver-typescript": "^3.6.1",
+    "eslint-plugin-import": "^2.29.1",
+    "prettier": "^3.1.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
+  }
+}
